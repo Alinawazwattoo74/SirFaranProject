@@ -1,0 +1,17 @@
+version: '3'
+services:
+  backend:
+    build:
+      context: ./Backend
+    ports:
+      - "5000:5000"
+    environment:
+      - NAME=YourName   # Replace with your desired name
+
+  frontend:
+    build:
+      context: ./Frontend
+    ports:
+      - "8000:8000"
+    environment:
+      - BACKEND_URL=http://backend:5000   # URL of the backend service
