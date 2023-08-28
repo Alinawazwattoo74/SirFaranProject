@@ -10,8 +10,6 @@ pipeline {
             }
             
         }
-        
-     
     
         stage("Build"){
              steps{
@@ -23,7 +21,6 @@ pipeline {
             
         }
         
-    
         stage("Push to Docker Hub"){
              steps{
                  echo "pushing the code"
@@ -38,10 +35,9 @@ pipeline {
         }
         
     
-    
-        stage("Deploy"){
-             steps{
-                echo "Deploying the code"
+           stage("Deploy"){
+               steps{
+                   echo "Deploying the code"
             }
             
         }
