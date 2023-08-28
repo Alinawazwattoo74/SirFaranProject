@@ -10,11 +10,12 @@ COPY package*.json ./
 # Install Node.js dependencies
 RUN npm install
 
-# Copy backend.js to the container
-COPY backend.js .
+# Copy backend.js and frontend.js to the container
+COPY Backend/backend.js .
+COPY Frontend/frontend.js .
 
-# Expose port 5000 for the backend service
-EXPOSE 5000
+# Expose ports for both backend and frontend services
+EXPOSE 5000 8000
 
-# Run backend.js when the container launches
+# Run both backend.js and frontend.js when the container launches
 CMD ["node", "backend.js"]
