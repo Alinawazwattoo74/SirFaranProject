@@ -6,7 +6,7 @@ const port = process.env.PORT || 5000;
 const name = process.env.NAME || 'World';
 
 app.get('/', (req, res) => {
-  res.send(`Hello Ali Wattoo `);
+  res.send(`Hello Ali Watt `);
 });
 
 app.listen(port, () => {
