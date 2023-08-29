@@ -10,7 +10,7 @@ services:
 
   frontend:
     build:
-      context: ./Frontend
+      context: ./
     ports:
       - "8000:8000"
     environment:
