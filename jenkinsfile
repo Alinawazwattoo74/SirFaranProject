@@ -38,7 +38,7 @@ pipeline {
            stage("Deploy to Minikube") {
             steps {
                 echo "Deploying the code to Minikube"
-                withKubeConfig(credentialsId: 'miniKube', serverUrl: 'https://172.31.7.188:8443') {
+                withKubeConfig(credentialsId: 'miniKube', serverUrl: 'https://172.31.40.222:8443') {
                     sh "kubectl apply -f Kubernetes/backend-deployment-service.yaml"
                     sh "kubectl apply -f Kubernetes/frontend-deployment-service.yaml"
                 }
