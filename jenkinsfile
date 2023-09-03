@@ -15,7 +15,7 @@ pipeline {
              steps{
                  echo "building the code"
                  sh "docker build -t app ."
-                 sh "docker-compose up -d"
+               
                 
             }
             
