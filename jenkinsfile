@@ -14,7 +14,7 @@ pipeline {
         stage("Build"){
              steps{
                  echo "building the code"
-                 sh "docker build -t app ."
+                 sh "docker build -t wattoo ."
                
                 
             }
