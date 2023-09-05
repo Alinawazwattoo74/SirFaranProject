@@ -21,6 +21,14 @@ pipeline {
             }
             
         }
+
+         stage("Clear Docker Cache") {
+            steps {
+                echo "Clearing Docker image cache"
+                sh "docker system prune -a -f"
+            }
+        }
+
         
         stage("Push to Docker Hub"){
              steps{
