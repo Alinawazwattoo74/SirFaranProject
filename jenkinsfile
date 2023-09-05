@@ -14,7 +14,8 @@ pipeline {
         stage("Build"){
              steps{
                  echo "building the code"
-                 sh "docker build -t wattoo ."
+                 sh "docker build -t app ."
+                 sh"docker-compose up -d"
                
                 
             }
@@ -38,10 +39,11 @@ pipeline {
            stage("Deploy to Minikube") {
             steps {
                 echo "Deploying the code to Minikube"
-                withKubeConfig(credentialsId: 'miniKube', serverUrl: 'https://172.31.39.239:8443') {
+               /* withKubeConfig(credentialsId: 'miniKube', serverUrl: 'https://172.31.39.239:8443') {
                     sh "kubectl apply -f Kubernetes/backend-deployment-service.yaml"
                     sh "kubectl apply -f Kubernetes/frontend-deployment-service.yaml"
                 }
+                */
             }
             
         }
