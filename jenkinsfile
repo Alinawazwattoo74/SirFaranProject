@@ -26,9 +26,9 @@ pipeline {
              steps{
                  echo "pushing the code"
                  withCredentials([usernamePassword(credentialsId:"dockerHub",passwordVariable:"dockerHubPass",usernameVariable:"dockerHubUser")]){
-                 sh "docker tag app ${env.dockerHubUser}/app:latest"
+                 sh "docker build -t ${env.dockerHubUser}/app:${GIT_COMMIT} ."
                  sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}"
-                 sh "docker push ${env.dockerHubUser}/app:latest"
+                 sh "docker push ${env.dockerHubUser}/app:${GIT_COMMIT}"
             
                  }
             }
